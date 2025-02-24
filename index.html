@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>我的小組知識庫</title>
+    <title>小組知識庫</title>
 </head>
 <body>
-    <h1>歡迎來到我們的資源與會議紀錄</h1>
-    <p>這裡是網路資源與會議內容的整理。</p>
+    <div id="login" style="display: block;">
+        <h2>請輸入密碼</h2>
+        <input type="password" id="password">
+        <button onclick="checkPassword()">進入</button>
+    </div>
+    <div id="content" style="display: none;">
+        <h1>歡迎來到我們的資源與會議紀錄</h1>
+        <p>這裡是我們的內容。</p>
+    </div>
+    <script>
+        function checkPassword() {
+            const pwd = document.getElementById("password").value;
+            if (pwd === "UCFG") { // 替換成你的密碼
+                document.getElementById("login").style.display = "none";
+                document.getElementById("content").style.display = "block";
+            } else {
+                alert("密碼錯誤！");
+            }
+        }
+    </script>
 </body>
 </html>
